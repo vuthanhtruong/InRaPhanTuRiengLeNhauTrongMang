@@ -41,7 +41,7 @@ public class hello {
 		}
 
 		for (int i = 0; i < n; i++) {
-			if (i >= b) {
+			if (i < b) {
 				int temp = M[i];
 				M[i] = M[n - 1];
 				M[n - 1] = temp;
