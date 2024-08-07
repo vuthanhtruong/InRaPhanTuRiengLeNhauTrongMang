@@ -4,11 +4,15 @@ public class hello {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-    	int M[] = new int[] { 100, 100, 5, 6, 4, 10, 9,5,3,2, Integer.MAX_VALUE, 9,2,1,3,4,2,Integer.MAX_VALUE,Integer.MAX_VALUE,Integer.MAX_VALUE,9, 11, 11, 9, 9 };
+       	int M[] = new int[] { 100, Integer.MAX_VALUE,100, 5, 6, 4, 10, 9,5, 9, 9 , Integer.MAX_VALUE,2,1,3,2,Integer.MAX_VALUE,1,7,5,4,Integer.MAX_VALUE,2,1,5,3,Integer.MAX_VALUE,2,2,2,Integer.MAX_VALUE};
 		int N[] = new int[M.length];
 		boolean a = true;
 		int n = 0;
 		int b = 0;
+		int h=M.length;
+		for (int i = 0; i < M.length; i++) {
+			System.out.print(M[i] + " ");
+		}
 		for (int i = 0; i < M.length; i++) {
 			if (M[i] == Integer.MAX_VALUE) {
 				a = false;
@@ -16,12 +20,17 @@ public class hello {
 				break;
 			}
 		}
-
 		for (int i = 0; i < M.length - 1; i++) {
 			for (int j = i + 1; j < M.length; j++) {
 				if (M[i] == M[j]) {
 					M[j] = Integer.MAX_VALUE;
 				}
+			}
+		}
+		int count1=0;
+		for (int i = 0; i < b; i++) {
+			if(M[i]==Integer.MAX_VALUE) {
+				count1++;
 			}
 		}
 		int count=0;
@@ -30,7 +39,6 @@ public class hello {
 				count++;
 			}
 		}
-
 		for (int i = 0; i < M.length; i++) {
 			if (M[i] < Integer.MAX_VALUE) {
 				N[n] = M[i];
@@ -41,37 +49,18 @@ public class hello {
 		if (a == false) {
 			M[n] = Integer.MAX_VALUE;
 			n = n + 1;
-			
-		}
-		for (int i = 0; i < n; i++) {
-			System.out.print(M[i] + " ");
 		}
 		System.out.println();
-		if(b>n-1) {
-			for (int i = 0; i < n; i++) {
-				if (i >= b-count+4) {
-					int temp = M[i];
-					M[i] = M[n-1];
-					M[n-1] = temp;
-				}
+		for (int i = 0; i < n; i++) {
+			if (i >= b-count1) {
+				int temp = M[i];
+				M[i] = M[n-1];
+				M[n-1] = temp;
 			}
 		}
-		else {
-			for (int i = 0; i < n; i++) {
-				if (i >= b-1) {
-					int temp = M[i];
-					M[i] = M[n-1];
-					M[n-1] = temp;
-				}
-			}
-		}
-
-		
 		System.out.println("------------");
 		for (int i = 0; i < n; i++) {
 			System.out.print(M[i] + " ");
 		}
-
 	}
-
 }
