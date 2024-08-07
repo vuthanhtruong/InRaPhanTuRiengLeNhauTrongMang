@@ -4,7 +4,7 @@ public class hello {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int M[] = new int[] { 100, 100, 5, 6, 4, 10, 9,5, Integer.MAX_VALUE,9, 9 , 2,1,3,2,1,7,5,4,2,1,5,3,2,2,2};
+		int M[] = new int[] { 100,100,5,6,4,10,9,5,9,9,Integer.MAX_VALUE,2,1,3,2,1,7,5,4,2,1,5,3,2,2,2};
 		int N[] = new int[M.length];
 		boolean a = true;
 		int n = 0;
@@ -27,14 +27,8 @@ public class hello {
 				}
 			}
 		}
-		int count1=0;
-		for (int i = 0; i < b; i++) {
-			if(M[i]==Integer.MAX_VALUE) {
-				count1++;
-			}
-		}
 		int count=0;
-		for (int i = 0; i < M.length - 1; i++) {
+		for (int i = 0; i < b; i++) {
 			if(M[i]==Integer.MAX_VALUE) {
 				count++;
 			}
@@ -51,7 +45,7 @@ public class hello {
 			M[n] = Integer.MAX_VALUE;
 			n = n + 1;
 			for (int i = 0; i < n; i++) {
-				if (i >= b-count1) {
+				if (i >= b-count) {
 					int temp = M[i];
 					M[i] = M[n-1];
 					M[n-1] = temp;
