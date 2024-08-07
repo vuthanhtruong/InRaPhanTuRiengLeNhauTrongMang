@@ -4,7 +4,7 @@ public class hello {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int M[] = new int[] { Integer.MAX_VALUE, 100, 5, 6, 4, 10, 9, Integer.MAX_VALUE, 9, 11, 11, 9, 9 };
+    	int M[] = new int[] { 100, 100, 5, 6, 4, 10, 9,5,3,2, Integer.MAX_VALUE, 9,2,1,3,4,2,Integer.MAX_VALUE,Integer.MAX_VALUE,Integer.MAX_VALUE,9, 11, 11, 9, 9 };
 		int N[] = new int[M.length];
 		boolean a = true;
 		int n = 0;
@@ -24,6 +24,12 @@ public class hello {
 				}
 			}
 		}
+		int count=0;
+		for (int i = 0; i < M.length - 1; i++) {
+			if(M[i]==Integer.MAX_VALUE) {
+				count++;
+			}
+		}
 
 		for (int i = 0; i < M.length; i++) {
 			if (M[i] < Integer.MAX_VALUE) {
@@ -35,21 +41,35 @@ public class hello {
 		if (a == false) {
 			M[n] = Integer.MAX_VALUE;
 			n = n + 1;
+			
 		}
 		for (int i = 0; i < n; i++) {
-			System.out.println(M[i]);
+			System.out.print(M[i] + " ");
 		}
-
-		for (int i = 0; i < n; i++) {
-			if (i >= b) {
-				int temp = M[i];
-				M[i] = M[n - 1];
-				M[n - 1] = temp;
+		System.out.println();
+		if(b>n-1) {
+			for (int i = 0; i < n; i++) {
+				if (i >= b-count+4) {
+					int temp = M[i];
+					M[i] = M[n-1];
+					M[n-1] = temp;
+				}
 			}
 		}
+		else {
+			for (int i = 0; i < n; i++) {
+				if (i >= b-1) {
+					int temp = M[i];
+					M[i] = M[n-1];
+					M[n-1] = temp;
+				}
+			}
+		}
+
+		
 		System.out.println("------------");
 		for (int i = 0; i < n; i++) {
-			System.out.println(M[i]);
+			System.out.print(M[i] + " ");
 		}
 
 	}
